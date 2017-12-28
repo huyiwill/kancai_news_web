@@ -1,0 +1,2 @@
+<?php exit('dedecms');?>
+a:2:{s:4:"data";a:1:{s:5:"reval";s:434:"&lt;div id='SOHUCS'&gt;&lt;/div&gt;&lt;script&gt;(function(){var doc = document,s = doc.createElement('script'),h = doc.getElementsByTagName('head')[0] || doc.head || doc.documentElement;s.type = 'text/javascript';s.charset = 'utf-8';s.src='http://assets.changyan.sohu.com/upload/changyan.js?conf=prod_8725357bf64682151b39b7ac4b4a1c5d&amp;appid=cyrBysoEK';h.insertBefore(s,h.firstChild);window.SCS_NO_IFRAME = true;})()&lt;/script&gt;";}s:7:"timeout";i:1432088152;}

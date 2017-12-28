@@ -1,0 +1,1 @@
+INSERT INTO `dede_admin` VALUES('1','10','admin','eb0d22c59b02bc6c5466','admin','锦尚中国精仿砍柴网自媒体网站源码','admin@52jscn.com','','1430985980','127.0.0.1');

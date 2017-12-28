@@ -1,0 +1,23 @@
+<div class="topbar">
+	 <div class=" wrapper">
+		<div class="logo"><a href="/" title="{dede:global.cfg_webname/}" >{dede:global.cfg_webname/}</a></div>
+		<ul class="nav">
+			<li><strong><a href="/" title="" target="_self"><span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;Ê×Ò³</a></strong></li>
+            
+	{dede:channelartlist typeid='top'}
+			<li><strong><a href="{dede:field name='typeurl'/}" title="" target="_self"><span class="glyphicon 
+glyphicon-book"></span>&nbsp;&nbsp;{dede:field name='typename'/}</a></strong>
+                        <dl>
+					<em></em>
+                    {dede:channel type='son' noself='yes'}
+					<dd><a href="[field:typelink/]" title="" target="_self">[field:typename/]</a></dd>
+                    {/dede:channel}
+				</dl></li>
+      {/dede:channelartlist}          
+     
+		</ul>
+		<div class="action"> 
+			<a href="{dede:type typeid='16'}[field:typeurl /]{/dede:type}" class="n1" target="_blank" title="Í¶¸å">Í¶¸å</a>			
+		</div>
+	</div>
+</div>

@@ -1,0 +1,13 @@
+INSERT INTO `dede_myad` VALUES('1','0','0','ad01','广告位_01','0','1423230537','1425822537','<a href=\"\" title=\"\" target=\"_blank\"><img src=\"/dede58/html/images/img14.jpg\" alt=\"\" /></a>','');
+INSERT INTO `dede_myad` VALUES('2','0','0','ad02','广告位_02','0','1423230600','1425822600','<a href=\"\" title=\"\" target=\"_blank\"><img src=\"/dede58/html/images/img15.jpg\" alt=\"\" /></a>','');
+INSERT INTO `dede_myad` VALUES('3','0','0','ad03','广告位_03','0','1423230735','1425822735','<a href=\"\" title=\"\" target=\"_blank\"><img src=\"/dede58/html/images/img17.jpg\" alt=\"\" /></a>','');
+INSERT INTO `dede_myad` VALUES('4','0','0','index_001','首页横幅广告位','0','1423286820','1425878820','<a href=\"\"><img src=\"/dede58/html/images/index_001.jpg\" /></a>','');
+INSERT INTO `dede_myad` VALUES('5','0','0','biaoyu01','首页-标语01','0','1423286968','1425878968','<a href=\"\"><img src=\"/dede58/html/images/kanchai_v3.jpg\" alt=\"\" /></a>','');
+INSERT INTO `dede_myad` VALUES('6','0','0','biaoyu02','首页-标语02','0','1423287009','1425879009','<a href=\"/aboutme/report.html\"><img src=\"/dede58/html/images/img3.jpg\" alt=\"\" /></a>','');
+INSERT INTO `dede_myad` VALUES('7','0','0','brand01','首页-品牌展示01','0','1423287182','1425879182','<a href=\"#\" title=\"\" target=\"_blank\"><img src=\"/dede58/html/images/img9.jpg\" alt=\"\" /></a>','');
+INSERT INTO `dede_myad` VALUES('8','0','0','brand02','首页-品牌展示01','0','1423287205','1425879205','<a href=\"#\" title=\"\" target=\"_blank\"><img src=\"/dede58/html/images/img10.jpg\" alt=\"\"></a>','');
+INSERT INTO `dede_myad` VALUES('9','0','0','artice_ad_01','内容页-文章内容底部','0','1423293058','1425885058','<a href=\"#\" target=\"_blank\"><img  src=\"/dede58/html/images/img24.jpg\" alt=\"\" /></a>','');
+INSERT INTO `dede_myad` VALUES('10','0','0','index_ad_01','封面-横幅01','0','1423371721','1425963721','<a href=\"#\"><img src=\"/dede58/img/index_ad01.jpg\" /></a> ','');
+INSERT INTO `dede_myad` VALUES('11','0','0','index_ad_02','封面-横幅02','0','1423396747','1425988747','<a href=\"#\"><img src=\"/dede58/img/index_ad02.jpg\" /></a> ','');
+INSERT INTO `dede_myad` VALUES('12','0','0','index_ad_03','封面-横幅03','0','1423396815','1425988815','<a href=\"#\"><img src=\"/dede58/img/index_ad03.jpg\" /></a> ','');
+INSERT INTO `dede_myad` VALUES('13','0','0','index_ad_04','封面-横幅04','0','1423396847','1425988847','<a href=\"#\"><img src=\"/dede58/img/index_ad04.jpg\" /></a> ','');

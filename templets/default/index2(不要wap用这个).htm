@@ -1,0 +1,264 @@
+<!DOCTYPE HTML>
+<!--[if lt IE 7 ]> <html lang="zh-CN" class="ie6 ielt8"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="zh-CN" class="ie7 ielt8"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="zh-CN" class="ie8"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html lang="zh-CN"><!--<![endif]-->
+<head>
+	<meta charset="gb2312">
+    <title>{dede:global.cfg_webname/}</title>
+    <meta name="description" content="{dede:global.cfg_description/}" />
+    <meta name="keywords" content="{dede:global.cfg_keywords/}" />
+	<link rel="shortcut icon" href="/favicon.ico" />	
+	<base target="_blank">
+	<!-- <link rel="stylesheet" type="text/css" href="/dede58/css/cmstop-common.css" />-->
+	<!-- <link rel="stylesheet" type="text/css" href="/dede58/css/cmstop-index.css" /> -->
+	<!--[if lt IE 9 ]>
+		<script type="text/javascript" src="/dede58/js/helper/modernizr.js"></script>
+	<![endif]-->
+	<script type="text/javascript" src="/dede58/js/cmstop-common.js"></script>
+	<script type="text/javascript" src="/dede58/js/jquery.js"></script>
+	<script type="text/javascript" src="/dede58/js/config.js"></script>
+	<script type="text/javascript" src="/dede58/js/jquery.cookie.js"></script>
+	<!-- 本页面私有 -->
+    	<link rel="stylesheet" type="text/css" href="/dede58/html/css/style.css" />
+    	<script type="text/javascript" src="/dede58/html/js/common.js"></script>
+	<script type="text/javascript" src="/dede58/html/js/index.js"></script>
+	<!-- @本页面私有 -->
+</head>
+
+
+<body>
+	<!--网站公共头部-->
+	{dede:include filename="head.htm"/}
+	<!--@网站公共头部-->
+<div class="main"> 
+  <!--主要内容-->
+  <div class="mainnews"> 
+    <!--顶部文字新闻-->
+	<div class="latestnews">
+		<ul id="miniNewsRegion">
+        
+    {dede:arclist row=8 titlelen=48 flag='s'}
+    [field:global name=autoindex runphp="yes"]@me=(@me+1)%2==0?"<li>":"";[/field:global]<img src="/dede58/html/images/symbol-1.png" alt="[field:fulltitle/]" /><a href="[field:arcurl/]">[field:title/]</a>[field:global name=autoindex runphp="yes"]@me=(@me+1)%2==0?"":"</li>";[/field:global]
+    {/dede:arclist}
+			
+		</ul>
+		<div class="msearch">
+			 <input type="text" placeholder="输入关键词" class="text-msearch"  id="baiduSearch"/>
+<input type="button" class="btn-msearch" />
+		</div>
+	 </div>
+	 <!-- 广告位01 -->
+	   <div class="adlr">{dede:myad name='index_001'/}</div>
+	 <!-- @广告位01 -->
+    <!--左侧-->
+    <div class="newsl">
+	    	<!-- 首页幻灯片 -->
+		<div class="m-slide">
+				 <ul class="img">
+                {dede:arclist row=4 titlelen=32 flag='f'}
+				<li><a href="[field:arcurl/]" target="_blank" title="[field:fulltitle/]"><img src="[field:litpic/]" width="670" height="365"/></a></li>
+                {/dede:arclist}
+		 </ul>
+<div id="ifocus_opdiv"></div>
+<div id="ifocus_tx">
+	        <ul>
+   			    {dede:arclist row=4 titlelen=32 flag='f'}
+				<li><a href="[field:arcurl/]" target="_blank" title="[field:fulltitle/]">[field:title/]</a></li>
+                {/dede:arclist}
+				
+			</ul>
+</div>
+   <ul class="tab">
+                {dede:arclist row=4 titlelen=32 flag='f'}
+				<li><div class="color[field:global.autoindex/]">[field:title/]</div></li>
+                {/dede:arclist}
+	</ul>
+			</div>
+		<!-- @首页幻灯片 -->
+		<div class="leftbanber">
+			{dede:myad name='biaoyu01'/}
+		</div>
+		 <!--  @首页-标语01 -->
+		<!--精选导读-->
+		<div class="chosen">
+			<div class="com-title"><span><img src="/dede58/html/images/symbol-4.png" alt="" />精选导读</span></div>
+                {dede:arclist row=6 titlelen=32 flag='c' infolen='70'}    
+		  			<div class="chosenbox [field:global name=autoindex runphp='yes']@me=(@me+1)%2==0?'':'chosenbox-ml';[/field:global]">
+			<div class="chosenimg"><a href="/[field:arcurl/]" title="[field:fulltitle/]" target="_blank"><img src="[field:litpic/]" alt="[field:fulltitle/]" width="130" height="85" /></a></div>
+			<h3><a href="[field:arcurl/]" title="[field:fulltitle/]" target="_blank">[field:fulltitle/]</a></h3>
+			<p>[field:info/]...</p>
+			<p><span></span></p>
+		</div>
+        {/dede:arclist}
+	    
+		  	<div class="floatfix"></div>
+		</div>
+		<!--@精选导读-->
+		<!--热门推荐-->
+		<div class="hot">
+			<div class="com-title"><span><img src="/dede58/html/images/symbol-6.png" alt="" />热门推荐</span></div>
+                {dede:arclist row=14 titlelen=32 noflag='h' infolen='230'}
+    			<div class="hotbox">
+	<div class="hotimg">
+		<div class="hotimgzz"></div>
+		<img src="[field:litpic/]" alt="[field:fulltitle/]" width="250" height="165"/>
+		<div class="standpoint">[field:typename/]</div>
+		<a class="zzsz" href="[field:arcurl/]"  target="_blank" title="[field:fulltitle/]"></a>
+	</div>
+	<h3><a href="[field:arcurl/]">[field:title/]</a></h3>
+	<p>[field:info/]...</p>
+	<span>阅读：[field:click/]</span><span>[field:pubdate function="MyDate('Y-m-d H:i',@me)"/]</span> 
+  </div>
+  {/dede:arclist}
+
+		</div>
+		<!--@热门推荐-->
+    </div>
+    
+    <!--右侧-->
+    <div class="newsr">
+		<div class="topnews">
+			<div class="com-title"><span><img src="/dede58/html/images/symbol-3.png" alt="" />今日头条</span></div>
+			<div class="sideMenu" style="margin:0 auto">
+                {dede:arclist row=5 titlelen=32 flag='h' infolen='230'}    
+			 <h3 class="h3img[field:global.autoindex/]"><a href="[field:arcurl/]"  target="_blank" title="[field:fulltitle/]">[field:title/]</a></h3>
+	  <ul><li>[field:info/]...</li></ul>
+      {/dede:arclist}
+			</div>
+		</div>
+		<!-- 首页-标语02 -->
+		<div class="rightbanber">
+			{dede:myad name='biaoyu02'/}
+		</div>
+		<!-- @首页-标语02 -->
+      <!--关注我们-->
+      <div class="follow">
+        <div class="com-title"><span><img src="/dede58/html/images/symbol-5.png" alt="" />关注我们</span></div>
+        <div class="followcon"> <span>关注微信公众号，了解最新精彩内容</span>
+          <p class=""> <img src="/dede58/html/images/qr1.jpg" alt="" /> <img src="/dede58/html/images/qr2.jpg" alt="" /> </p>
+          <a href="" class="awb1"></a><a href="" class="awb2"></a><a href="" class="asubscription"></a> </div>
+      </div>
+      <!--阅读推荐-->
+		<div class="read">
+		  <div class="com-title"><span><img src="/dede58/html/images/symbol-3.png" alt="自媒体" />自媒体</span></div>
+		  		     {dede:arclist row=4 titlelen=32 noflag='h' typeid=6}   
+                 <div class="readbox">
+		<div class="readtitle"><a href="[field:arcurl/]"  target="_blank" title="[field:fulltitle/]">[field:title/]</a></div>
+		<div class="readimg"><a href="[field:arcurl/]"  target="_blank" title="[field:fulltitle/]"><img src="[field:litpic/]" alt="title="[field:fulltitle/]"" width="90" height="59"/></a></div>
+		<p>[field:info/]...</p>
+	  </div>
+      {/dede:arclist}
+
+		</div>
+      <!--轮播广告-->
+      <div class="rightad">
+        <div class="focusBox" style="margin:0 auto">
+        <ul class="pic">
+            <li><a href="###" target="_blank" title=""><img src="/dede58/html/images/img7.jpg"/></a></li>
+            <li><a href="/" target="_blank" title=""><img src="/upload.ikanchai.com/2014/1211/thumb_365_670_1418306464554.jpg"/></a></li>
+            <li><a href="###" target="_blank" title=""><img src="/img1.gtimg.com/tech/pics/hv1/146/91/1759/114402326.jpg"/></a></li>
+            <li><a href="###" target="_blank" title=""><img src="/dede58/html/images/img9.jpg"/></a></li>
+</ul>
+        </div>
+      </div>
+      <!--轮播广告-->
+      
+      <!--科技快报-->
+      <div class="newsletter">
+        <div class="com-title"><span><img src="/dede58/html/images/symbol-13.png" alt="" />科技快报</span></div>
+        <ul>
+        {dede:arclist row=6 titlelen=36 noflag='h' typeid=5}   
+  <li><a href="[field:arcurl/]" title="[field:fulltitle/]" target="_blank">[field:title/]</a></li>
+  {/dede:arclist}
+  
+</ul>
+      </div>
+      <!--品牌展示-->
+      <div class="brandshow">
+      <div class="com-title"><span><img src="/dede58/html/images/symbol-5.png" alt="" />品牌展示</span></div>
+{dede:myad name='brand01'/}
+{dede:myad name='brand02'/} </div>
+
+    </div>
+    <div class="floatfix"></div>
+  </div>
+  
+  <!--其他信息-->
+	<div class="mainother">
+		<!-- 合作伙伴 -->
+		<div class="partners">
+			<div class="partnerstitle"></div>
+			<div class="partnersimg"><a href=""><img src="/dede58/html/images/link_logo1.jpg" alt="" /></a></div>
+			<div class="partnersimg"><a href="/www.cmstop.com/"><img src="/dede58/html/images/link_logo2.jpg" alt="" /></a></div>
+			<div class="partnersimg"><a href=""><img src="/dede58/html/images/link_logo3.jpg" alt="" /></a></div>
+			<div class="partnersimg"><a href=""><img src="/dede58/html/images/link_logo4.jpg" alt="" /></a></div>
+			<div class="partnersimg"><a href=""><img src="/dede58/html/images/link_logo5.jpg" alt="" /></a></div>
+			<div class="partnersimg"><a href=""><img src="/dede58/html/images/link_logo6.jpg" alt="" /></a></div>
+			<div class="partnersimg"><a href=""><img src="/dede58/html/images/link_logo7.jpg" alt="" /></a></div>
+			<div class="partnersimg"><a href=""><img src="/dede58/html/images/link_logo8.jpg" alt="" /></a></div>
+
+		</div>
+		<!-- @合作伙伴 -->
+		<!-- 友情链接 -->
+		<div class="links">
+			<div class="linkstitle"></div>
+			<ul class="ulfix">
+				        <li><a href="/it.sohu.com/" target="_blank">搜狐IT</a> </li>
+        <li><a href="/www.sfw.cn" target="_blank">上方网</a> </li>
+        <li><a href="/www.yilianit.com/" target="_blank">移联名商</a> </li>
+        <li><a href="/www.ycpai.com/" target="_blank">互联网创业</a> </li>
+        <li><a href="/www.loorin.com" target="_blank">烙印网</a> </li>
+        <li><a href="/www.newhua.com/" target="_blank">牛华网</a> </li>
+        <li><a href="/news.pconline.com.cn/" target="_blank">品科技</a> </li>
+        <li><a href="/news.ittime.com.cn/" target="_blank">IT时代周刊</a> </li>
+        <li><a href="/www.lanjingtmt.com/" target="_blank">蓝鲸TMT网</a> </li>
+        <li><a href="/www.techxinwen.com/" target="_blank">科技资讯网</a> </li>
+        <li><a href="/science.china.com.cn/" target="_blank">科学中国</a> </li>
+        <li><a href="/www.56.com" target="_blank">56网</a> </li>
+        <li><a href="/www.cngulu.com" target="_blank">咕噜网</a> </li>
+        <li><a href="/news.iresearch.cn/" target="_blank">艾瑞网</a> </li>
+        <li><a href="/www.techweb.com.cn" target="_blank">TechWeb</a> </li>
+        <li><a href="/www.tele.hc360.com/" target="_blank">慧聪通信</a> </li>
+        <li><a href="/soft.cnzz.cn" target="_blank">站长软件</a> </li>
+        <li><a href="/news.ikanchai.com" target="_blank">科技快报</a> </li>
+        <li><a href="/www.eguan.cn/" target="_blank">易观网</a> </li>
+        <li><a href="/itjuzi.com/" target="_blank">IT桔子</a> </li>
+        <li><a href="/www.iheima.com" target="_blank">i黑马</a> </li>
+        <li><a href="/www.tuicool.com/" target="_blank">推酷网</a> </li>
+        <li><a href="/www.13ddd.com/" target="_blank">大都督网</a> </li>
+        <li><a href="/www.jdgod.com" target="_blank">家电视界网</a> </li>
+        <li><a href="/tech.hexun.com/" target="_blank">和讯科技</a> </li>
+        <li><a href="/www.yixieshi.com/" target="_blank">互联网的一些事</a> </li>
+        <li><a href="/www.guigu.org/" target="_blank">硅谷网</a> </li>
+        <li><a href="/www.iterduo.com/" target="_blank">IT耳朵</a> </li>
+        <li><a href="/www.iecnews.com" target="_blank">电商媒体</a> </li>
+        <li><a href="/opinion.hexun.com/" target="_blank">和讯评论</a> </li>
+        <li><a href="/news.jxgdw.com/jswp/" target="_blank">今视网评</a> </li>
+        <li><a href="/www.takungpao.com/" target="_blank">大公网</a> </li>
+        <li><a href="/www.jjcmw.cn/" target="_blank">九江传媒网</a> </li>
+        <li><a href="/www.cien.com.cn" target="_blank">中国产经新闻网</a> </li>
+        <li><a href="/www.yn1234.com/" target="_blank">翼牛网</a> </li>
+        <li><a href="/news.gxorg.com/" target="_blank">广西新闻</a> </li>
+        <li><a href="/www.qianzhan.com/survey/" target="_blank">新闻调查</a> </li>
+        <li><a href="/news.cecb2b.com/" target="_blank">电子行业资讯</a> </li>
+        <li><a href="/www.baiduer.com.cn/" target="_blank">百度爱好者</a> </li>
+        <li><a href="/www.investide.cn/" target="_blank">投资潮</a> </li>
+        <li><a href="/www.cyzone.cn" target="_blank">创业邦</a> </li>
+			</ul>
+		</div>
+		<!-- @友情链接 -->
+	</div>
+  	<div class="mreturn">
+		<div id="code"></div>
+<div id="code_img" src="/dede58/html/images/qr2.jpg"></div>
+<a id="gotop"></a> 
+
+	</div>
+</div>
+	<!--@侧边栏按钮-->
+	<!--网站公共页脚-->
+	{dede:include filename="footer.htm"/}
+<!--@网站公共页脚-->
+</body>
+</html>

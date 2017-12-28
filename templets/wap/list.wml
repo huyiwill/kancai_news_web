@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="zh_CN">
+<head>
+    <meta charset="gb2312" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"  />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title><?php echo utf82gb($typename); ?> - <?php echo utf82gb($cfg_webname); ?></title>
+    <link rel="stylesheet" href="/dede58/touch/css/touch-slider.css" />
+    <link rel="stylesheet" href="/dede58/touch/css/touch-app.css" />
+    <link rel="apple-touch-startup-image" href="/dede58/touch/startup/320x460.png" />
+    <link rel="apple-touch-icon" apple-touch-icon-precomposed="false" sizes="57x57" href="/dede58/touch/startup/cover.png"/>
+    <script src="/dede58/touch/js/zepto.min.js"></script>
+    <script src="/dede58/touch/js/cmstop.swipeslide.js"></script>
+    <script src="/dede58/touch/js/cmstop.touchapp.js"></script>
+    <script src="/dede58/touch/js/cmstop.scrolllist.js"></script>
+</head>
+<body>
+<div class="ui-container">
+    <header>
+        <div class="ui-header-bar">
+            <a href="/wap/wap.php" class="ui-gohomepage"></a>
+            <div class="ui-pagetitle">《<?php echo utf82gb($typename); ?>》 - <?php echo utf82gb($cfg_webname); ?></div>
+            <div class="ui-menu-trigger js-menubtn-top"></div>
+        </div>
+    </header>
+    <div class="ui-cateandsearch js-category-search">
+    <!-- 栏目导航 -->
+    <menu class="ui-categorys js-category-panel js-hidden">
+        <div class="bd">            
+            <ul>
+            <li><a href='/wap/wap.php'>首页</a></li>
+                 <?php echo utf82gb($channellist); ?>
+                            </ul>
+            <div class="search-box">
+                <div class="search-cont">
+                    <form action="http://m.ikanchai.com/search/" method="get">
+                        <input type="text" class="txt" placeholder="请输入关键词" name="keyword" value="">
+                        <input type="submit" value="" class="search-btn">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </menu>
+    <!-- @end 栏目导航 -->
+</div>        <section class="ui-articles-container channel-page">
+        <div class="ui-section-block">
+                        <div class="ui-mod-lists ui-cate-list ui-category-list">
+                <ul>
+                    {dede:datalist}
+      
+                                        <li>
+                        <div class="ui-mod-picsummary ui-border-bottom-gray">
+		                <a href='wap.php?action=article&amp;id=<?php echo $fields['id']; ?>'>
+		                    <img class="ui-pic" src="<?php echo $fields['litpic']; ?>">
+		                    <h3 class="ui-title"><?php echo ConvertStr($fields['title']); ?></h3>
+		                    <div class="ui-summary" style="word-wrap:break-word; white-space:pre-wrap;"><?php echo mb_substr($fields['description'],0,30,'gb2312').'...';?>		                        <div class="ui-comment-count"><?php echo date('Y-m-d H:i',$fields['pubdate']); ?></div>
+		                    </div>
+		                </a>
+		            </div>
+                    </li>
+                    {/dede:datalist}
+                                        
+                                    </ul>
+                                {dede:pagelist listsize='2' /} </div>
+                <script type="text/template" id="tpl-row">
+                    <li>
+
+              <div class="ui-mod-picsummary ui-border-bottom-gray">
+			    <a href="{%url%}">
+			        <img src="{%thumb%}" class="ui-pic" style="width:160;height:120;">
+			        <h3 class="ui-title">{%title%}</h3>
+			        <div class="ui-summary" style="word-wrap:break-word;white-space:pre-wrap; ">{%description%}...                        
+				<div class="ui-comment-count">{%comments%}评论</div>
+			        </div>
+			    </a>
+			</div>      
+		</li>
+                </script>
+                    </div>
+        <div class="clearfix"></div>
+    </section>
+</div>
+<!-- 底部栏目面板 -->
+<div class="js-category-bottom-container"></div>
+<!--@end 底部栏目面板 -->
+<!-- 底部 -->
+<footer class="ui-bottom-bar">
+    <a href='/?mobile'>PC版</a>
+    <p><?php echo $cfg_powerby;?></p></footer>
+<!--@end 底部 -->
+<div class="ui-top-down js-top-down">
+    <a href="javascript:;" class="ui-gotop js-gotop"></a>
+    <a href="javascript:;" class="ui-godown js-godown"></a>
+</div>
+</body>
+</html>

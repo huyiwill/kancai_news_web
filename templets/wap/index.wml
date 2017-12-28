@@ -1,0 +1,91 @@
+<?php
+$varlist = "cfg_webname,title,body,channellist,cfg_templeturl,cfg_powerby,newartlist,Wap_templeturl,ads_google,wap_keyword,wap_description";
+//ConvertCharset($varlist);    //如果是utf-8就去掉这一行
+$pageBody = '<'.'?xml version="1.0" encoding="gb2312" ?'.">\r\n";
+$pageBody .="<?xml version='1.0' encoding='gb2312' ?>
+<!doctype html>
+<html lang='zh_CN'>
+<head>
+    <meta charset='gb2312' />
+    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no'/>
+    <meta name='apple-mobile-web-app-status-bar-style' content='black'  />
+    <meta name='apple-mobile-web-app-capable' content='yes'>
+    <title>{$cfg_webname}</title>
+    <link rel='stylesheet' href='/dede58/touch/css/touch-slider.css' />
+    <link rel='stylesheet' href='/dede58/touch/css/touch-app.css' />
+    <link rel='apple-touch-startup-image' href='/dede58/touch/startup/320x460.png' />
+    <link rel='apple-touch-icon' apple-touch-icon-precomposed='false' sizes='57x57' href='/dede58/touch/startup/cover.png'/>
+    <script src='/dede58/touch/js/zepto.min.js'></script><!--http://zeptojs.com/ -->
+    <script src='/dede58/touch/js/cmstop.swipeslide.js'></script>
+    <script src='/dede58/touch/js/cmstop.touchapp.js'></script>
+	<script type='text/javascript' name='baidu-tc-cerfication' data-appid='5194138' src='http://apps.bdimg.com/cloudaapi/lightapp.js'></script>
+</head>
+<body>
+<div class='ui-container'>
+    <header>
+        <div class='ui-header-bar'>
+            <div class='ui-logo'></div>
+            <div class='ui-menu-trigger js-menubtn-top'></div>
+        </div>
+    </header>
+    <div class='ui-cateandsearch js-category-search'>
+    <!-- 栏目导航 -->
+    <menu class='ui-categorys js-category-panel js-hidden'>
+        <div class='bd'>
+            <ul>
+                <li><a href='/wap/wap.php'>首页</a></li>
+                {$channellist}                
+            </ul>
+            <div class='search-box'>
+                <div class='search-cont'>
+                    <form action='wap.php' method='get'>
+                    <form  action='' method='get'>
+                        <input type='hidden' name='action' value='search' />
+                        <input type='text' class='txt' placeholder='请输入关键词' name='q' value=''>
+                        <input type='submit' value='' class='search-btn'>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </menu>
+    <!-- @end 栏目导航 -->
+</div>    <section class='ui-articles-container'>
+        <!-- 幻灯片 -->
+        <div class='ui-section-block homebanner'>
+                        <!-- swipe -->
+            <section class='category-gallery js-index-slider'>
+                <ul>
+                	{$articles_flash}  <!-- 幻灯文章 -->
+                </ul>
+                <div class='swipeslide-bullets'><span><var>1</var>/3</span></div>
+            </section>
+            <!--@end swipe -->
+                    </div>
+        <!--@end 幻灯片 -->
+                <div class='ui-section-block'>
+                       {$articles_head}   <!-- 头条文章 -->
+
+                    </div>
+                    
+				{$channellistAndArticles}
+
+            </section>
+</div>
+
+<!-- 底部栏目面板 -->
+<div class='js-category-bottom-container'></div>
+<!--@end 底部栏目面板 -->
+<!-- 底部 -->
+<footer class='ui-bottom-bar'>
+    <a href='/?mobile'>PC版</a>
+    <p>{$cfg_powerby}</p></footer>
+<!--@end 底部 -->
+<div class='ui-top-down js-top-down'>
+<a href='javascript:;' class='ui-gotop js-gotop'></a>
+<a href='javascript:;' class='ui-godown js-godown'></a>
+</div>
+</body>
+</html>
+
+";
+?>

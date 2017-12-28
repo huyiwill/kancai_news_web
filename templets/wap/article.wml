@@ -1,0 +1,131 @@
+<?php
+$varlist = "cfg_webname,title,body,channellist,cfg_templeturl,newartlist,Wap_templeturl,ads_google,wap_keyword,wap_description";
+//ConvertCharset($varlist);    //如果是utf-8就去掉这一行
+$pageBody = '<'.'?xml version="1.0" encoding="gb2312" ?'.">\r\n";
+$pageBody .="<?xml version='1.0' encoding='gb2312' ?>
+<!doctype html>
+<html lang='zh_CN'>
+<head>
+    <meta charset='gb2312' />
+    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no'/>
+    <meta name='apple-mobile-web-app-status-bar-style' content='black'  />
+    <meta name='apple-mobile-web-app-capable' content='yes'>
+    <title>{$cfg_webname}</title>
+    <link rel='stylesheet' href='/dede58/touch/css/touch-app.css' />
+    <link rel='apple-touch-startup-image' href='/dede58/touch/startup/320x460.png' />
+    <link rel='apple-touch-icon' apple-touch-icon-precomposed='false' sizes='57x57' href='/dede58/touch/startup/cover.png'/>
+    <script src='/dede58/touch/js/zepto.min.js'></script>
+    <script src='/dede58/touch/js/cmstop.touchapp.js'></script>
+</head>
+<body>
+<div class='ui-container'>
+    <header>
+        <div class='ui-header-bar'>
+            <a href='/wap/wap.php' class='ui-gohomepage'></a>
+            <div class='ui-pagetitle'>{$cfg_webname}</div>
+            <div class='ui-menu-trigger js-menubtn-top'></div>
+        </div>
+    </header>
+    <div class='ui-cateandsearch js-category-search'>
+    <!-- 栏目导航 -->
+    <menu class='ui-categorys js-category-panel js-hidden'>
+        <div class='bd'>
+            <ul>
+            <li><a href='/wap/wap.php'>首页</a></li>
+                 {$channellist}
+                            </ul>
+            <div class='search-box'>
+                <div class='search-cont'>
+                    <form action='http://m.ikanchai.com/search/' method='get'>
+                        <input type='text' class='txt' placeholder='请输入关键词' name='keyword' value=''>
+                        <input type='submit' value='' class='search-btn'>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </menu>
+    <!-- @end 栏目导航 -->
+</div>    <div>
+        <article class='ui-article-container'>
+            <header>
+                <h1 class='ui-article-title'>{$title}</h1>
+                <div class='ui-article-infos'>
+                    <time>发布日期：{$pubdate}</time>
+                                        <span class='source'>类别：{$typename}</span>
+                                        <var class='js-font big-fontSize'></var>
+                </div>
+            </header>
+            <!-- 正文 -->
+            <section class='ui-article-detail'>
+                                <div id='content-show' class='mar-t-20'>{$body}</div>
+                            </section>
+
+            <!-- 广告位 -->
+            <div class='AdPositionId'>
+                                            </div>
+            <!--@end 广告位 -->
+        
+              <!-- 相关内容 -->
+            <section class='on-content' style='border:none;'>
+                            </section>
+            <!--@end 相关内容 -->
+            
+            <!-- 精彩推荐 -->
+            <section class='on-content'>
+                <h3 class='title'><a href=''>精彩推荐</a></h3>
+                <div class='ui-mod-picsummary ui-picture-list'>
+                  <ul>
+                  				  {$articles_tuijan}
+			    			</ul>
+                </div>
+            </section>
+            <!--@end 精彩推荐 -->
+            <!-- @end正文 -->
+        </article>
+    </div>
+</div>
+    <!-- 评论 -->
+            <div class='comment' style='width:95%;margin:0 auto;'>
+         	
+<!-- UY BEGIN -->
+<div id='uyan_frame'></div>
+<script type='text/javascript' src='http://v2.uyan.cc/code/uyan.js'></script>
+<!-- UY END -->
+            </div>
+            <!--@end 评论 -->
+<!--<div class='download'>
+    <a href='#' id='client-link'>
+<img src='/dede58/touch/css/ui/download.png' alt=''>
+</a>
+<script type='text/javascript'>
+$(function(){
+    if (!!navigator.userAgent.match(/AppleWebKit.*Mobile.*/)||!!navigator.userAgent.match(/AppleWebKit/)) {
+        if (!!navigator.userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/)) {
+            $('#client-link').attr('href', 'https://itunes.apple.com/cn/app/si-ta-xin-wen/id599473994?mt=8');
+        } else {
+            $('#client-link').attr('href', 'http://m.cmstop.com/download/CmsTop2.0.0.apk');
+        }  
+    } else {
+        $('#client-link').attr('href', 'https://itunes.apple.com/cn/app/si-ta-xin-wen/id599473994?mt=8');
+    }  
+});
+</script>
+
+<!--</div>-->
+<!-- 底部栏目面板 -->
+<div class='js-category-bottom-container'></div>
+<!--@end 底部栏目面板 -->
+<!-- 底部 -->
+<footer class='ui-bottom-bar'>
+        <a href='/?mobile'>PC版</a>
+    <p>{$cfg_powerby}</p></footer>
+<!--@end 底部 -->
+<div class='ui-top-down js-top-down'>
+    <a href='javascript:;' class='ui-gotop js-gotop'></a>
+    <a href='javascript:;' class='ui-godown js-godown'></a>
+</div>
+</body>
+</html>
+
+";
+?>

@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+<!--[if lt IE 7 ]> <html lang="zh-CN" class="ie6 ielt8"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="zh-CN" class="ie7 ielt8"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="zh-CN" class="ie8"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html lang="zh-CN"><!--<![endif]-->
+<head>
+	<meta charset="gb2312">
+<title>{dede:field.title/}_{dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:field name='keywords'/}" />
+<meta name="description" content="{dede:field name='description' function='html2text(@me)'/}" />
+	<!-- <link rel="stylesheet" type="text/css" href="/dede58/css/cmstop-common.css" />-->
+	<!-- <link rel="stylesheet" type="text/css" href="/dede58/css/cmstop-index.css" /> -->
+	<!--[if lt IE 9 ]>
+		<script type="text/javascript" src="/dede58/js/helper/modernizr.js"></script>
+	<![endif]-->
+	<script type="text/javascript" src="/dede58/js/cmstop-common.js"></script>
+	<script type="text/javascript" src="/dede58/js/jquery.js"></script>
+	<script type="text/javascript" src="http://img.ikanchai.com/js/config.js"></script>
+	<script type="text/javascript" src="/dede58/js/jquery.cookie.js"></script>
+	<!-- 本页面私有 -->
+    	<link rel="stylesheet" type="text/css" href="/dede58/html/css/style.css" />
+    	<script type="text/javascript" src="/dede58/html/js/common.js"></script>
+	<script type="text/javascript" src="/dede58/html/js/list_znyj.js"></script>
+	<!-- @本页面私有 -->
+</head>
+<body>
+	<!--网站公共头部-->
+	{dede:include filename="head.htm"/}
+	<!--@网站公共头部-->
+<div class="main">
+	<!--顶部新闻-->
+	<div class="mainnews" style="margin-top: 20px; padding-top: 10px;">
+		<!--图片新闻轮播-->
+		<div class="newsl">
+			<div class="m-slide">
+				 <ul class="img">
+                {dede:arclist row=4 titlelen=32 flag='f'}
+				<li><a href="[field:arcurl/]" target="_blank" title="[field:fulltitle/]"><img src="[field:litpic/]" width="670" height="365"/></a></li>
+                {/dede:arclist}
+		 </ul>
+<div id="ifocus_opdiv"></div>
+<div id="ifocus_tx">
+	        <ul>
+   			    {dede:arclist row=4 titlelen=32 flag='f'}
+				<li><a href="[field:arcurl/]" target="_blank" title="[field:fulltitle/]">[field:title/]</a></li>
+                {/dede:arclist}
+				
+			</ul>
+</div>
+   <ul class="tab">
+                {dede:arclist row=4 titlelen=32 flag='f'}
+				<li><div class="color[field:global.autoindex/]">[field:title/]</div></li>
+                {/dede:arclist}
+	</ul>
+			</div>
+		</div>
+		<!--图片新闻轮播-->
+		<!--智客观点-->
+		<div class="viewpoint">
+			<div class="com-title"><span><img src="/dede58/html/images/symbol-15.png" alt="" />智客观点</span></div>
+			<ul>
+                  {dede:arclist flag='c' row='9' orderby='pubdate' titlelen=34}
+                     <li><a href="[field:arcurl/]" target="_blank" title="[field:fulltitle/]">[field:title/]</a></li>
+                  {/dede:arclist}
+					
+			</ul>
+		</div>
+		<div class="floatfix"></div>
+
+		<!--标题栏-->
+		<div class="testtitle">
+			<div class="test2appraisal"><a href="">观点</a><span>|</span><a href="">评测</a></div>
+			<img src="/dede58/html/images/testtitle.png" alt="" />
+		</div>
+
+		<!--测评-->
+		<div class="test">
+			<ul class="ulfix">
+                {dede:list pagesize='12'}
+                
+				<li>		<h3>[field:title/]</h3>
+					<p><span>[field:pubdate function="MyDate('Y-m-d H:i',@me)"/]    阅读：[field:click/]</span></p>
+					<div class="testimg"><img src="[field:litpic/]" alt="[field:fulltitle/]" width="350" height="242" /></div>
+					<p>[field:description/]</p>
+					<a href="[field:arcurl/]"  target="_blank" title="[field:fulltitle/]"  class="fulltext">阅读全文</a>
+				</li>
+                 {/dede:list}
+				
+						
+			</ul>
+		</div>
+		<div class="page">
+        {dede:pagelist listitem="pre,next,pageno" listsize="5"/}
+		</div>
+
+	</div>
+	<div class="mreturn">
+		<div id="code"></div>
+<div id="code_img" src="/dede58/html/images/qr2.jpg"></div>
+<a id="gotop"></a> 
+
+	</div>
+</div>
+
+	<!--网站公共页脚-->
+	{dede:include filename="footer.htm"/}
+<!--@网站公共页脚-->
+</body>
+</html>

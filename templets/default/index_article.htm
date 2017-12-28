@@ -1,0 +1,256 @@
+<!DOCTYPE HTML>
+<!--[if lt IE 7 ]> <html lang="zh-CN" class="ie6 ielt8"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="zh-CN" class="ie7 ielt8"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="zh-CN" class="ie8"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="zh-CN">
+<!--<![endif]-->
+<head>
+<meta charset="gb2312">
+<title>{dede:field.title/}_{dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:field name='keywords'/}" />
+<meta name="description" content="{dede:field name='description' function='html2text(@me)'/}" />
+<link href="/dede58/img/kjkx/kjzs.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/dede58/js/cmstop-common.js"></script>
+<script type="text/javascript" src="/dede58/js/jquery.js"></script>
+<script type="text/javascript" src="/dede58/js/config.js"></script>
+<script type="text/javascript" src="/dede58/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="/dede58/img/kjkx/koala.min.1.5.js"></script>
+<script type="text/javascript" src="/dede58/html/js/common.js"></script>
+<link rel="stylesheet" type="text/css" href="/dede58/html/css/style.css" />
+</head>
+<body>
+{dede:include filename="head.htm"/}
+
+<div class="mybody">
+<div class="mybody_item">
+<div class="touping clearfix">
+  <div class="foucx"> 
+    <!-- 代码 开始 -->
+    <div id="fsD1" class="focus">
+      <div id="D1pic1" class="fPic"> 
+          {dede:arclist row=4 titlelen=40 flag='f'}
+        <div class="fcon">
+        <a href="[field:arcurl/]" target="_blank"><img src="[field:litpic/]" width="679" height="366" style="opacity: 1; "/></a>
+        <span class="shadow"> <a href="[field:arcurl/]">[field:title/]</a>
+        </span>
+        </div>
+		{/dede:arclist}
+ 
+      </div>
+      <div class="fbg">
+        <div class="D1fBt" id="D1fBt"> {dede:arclist row=4 titlelen=40 flag='f'}
+        <a href="javascript:void(0)" hidefocus="true" target="_self" class=""><i>[field:global.autoindex /]</i></a>
+		{/dede:arclist}</div>
+      </div>
+      <span class="prev"></span> <span class="next"></span> </div>
+    <script type="text/javascript">
+				Qfast.add('widgets', { path: "/dede58/img/kjkx/terminator2.2.min.js", type: "js", requires: ['fx'] });  
+				Qfast(false, 'widgets', function () {
+					K.tabs({
+						id: 'fsD1',   //焦点图包裹id  
+						conId: "D1pic1",  //** 大图域包裹id  
+						tabId:"D1fBt",  
+						tabTn:"a",
+						conCn: '.fcon', //** 大图域配置class       
+						auto: 1,   //自动播放 1或0
+						effect: 'fade',   //效果配置
+						eType: 'click', //** 鼠标事件
+						pageBt:true,//是否有按钮切换页码
+						bns: ['.prev', '.next'],//** 前后按钮配置class                          
+						interval: 3000  //** 停顿时间  
+					}) 
+				})  
+			</script> 
+    <!-- 代码 结束 --> 
+    
+  </div>
+  <div class="tt"> 
+    <ul>
+    {dede:arclist flag='h' limit='0,6' infolen='230' titlelen='64'}    
+<li><em>[field:typelink /]
+</em><span><a href="[field:arcurl/]" target="_blank" title="[field:fulltitle/]">[field:title/]</a>
+</span></li>
+{/dede:arclist}
+
+</ul>
+    <div class="des">
+      <h1><span><center>千言万语</center></span></h1>
+       <ul>
+ <li><span>很多人认为我们的主要竞争来自于必应或雅虎。但实际上，我们最大的搜索竞争对手是亚马逊。</span><em>—— 谷歌执行董事长施密特</em></li>
+</ul> 
+    </div>
+  </div>
+</div>
+<!--touping结束--->
+<div class="clearfix"></div>
+<div class="adline" style="padding:10px 0px;">{dede:myad name='index_ad_01'/}
+</div>
+
+<div class="clearfix"></div>
+<!--zimeiti-->
+<div class="zimeiti_center clearfix">
+  <div class="lft clearfix" style="width:837px;">
+    <div class="zimeiti_center_item1">
+      <div class="zimeiti_center_title clearfix"> 
+      
+      <span class="title"><a href="#">自媒体</a> </span>
+        <div  id="tab-hd"> 
+        {dede:channel type='son'}
+      <span  class=""><a href="[field:typeurl/]">[field:typename/]</a> </span>
+      {/dede:channel} </div>
+      </div>
+      <!--zimeiti_center_title-->
+      <div class="clearfix"></div>
+      <div id="tab-bd">
+{dede:channelartlist}
+        <div class="zimeiti_center_list" style="display:none">
+          <ul>
+              {dede:arclist row=5 titlelen=32 noflag='h' infolen='120'}
+                        <li class="clearfix"> <span class="img"><a href="[field:arcurl/]"><img src="[field:litpic/]" width="120" height="80"/></a> </span> <span><a href="[field:arcurl/]">[field:title/]</a> <em>[field:info/]...</em></span> </li>
+              {/dede:arclist}
+           </ul>
+        </div>
+   {/dede:channelartlist}
+
+      </div>
+    </div>
+    <script type="text/javascript">
+$(function(){
+    function tabs(tabTit,on,tabCon){
+	$(tabCon).each(function(){
+	  $(this).children().eq(0).show();
+	  });
+	$(tabTit).each(function(){
+	  $(this).children().eq(0).addClass(on);
+	  });
+     $(tabTit).children().hover(function(){
+        $(this).addClass(on).siblings().removeClass(on);
+         var index = $(tabTit).children().index(this);
+         $(tabCon).children().eq(index).show().siblings().hide();
+    });
+     }
+  tabs("#tab-hd"," select","#tab-bd");
+   });
+</script> 
+    <!--zimeiti_center_item1-->
+    <div class="zimeiti_center_item2">
+      <h1><span><a href="#" target="_blank">热门推荐</a> </span></h1>
+      <ul>
+            {dede:arclist flag='a' titlelen=42 row=3}
+ <li><span><a href="[field:arcurl/]"><img src="[field:litpic/]" width="160" height="120"/></a>
+</span><span><a href="[field:arcurl/]">[field:title/]</a>
+</span></li>
+{/dede:arclist}
+</ul> 
+    </div>
+    <div class="clearfix"></div>
+  </div>
+  <div class="rgt" style="width:300px;">
+    <div class="zimeiti_rt_ad">
+      <ul>
+        <li><span>{dede:myad name='index_ad_02'/}
+          </span></li>
+        <li><span>{dede:myad name='index_ad_03'/}
+          </span></li>
+        <li><span>{dede:myad name='index_ad_04'/}
+          </span></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="clearfix"></div>
+<div class="adline" style="padding:20px 0px;">{dede:myad name='index_ad_01'/}
+</div>
+<div class="sanpin">
+<div class="sanpin_title clearfix">
+  <span class="title"><a href="#" target="_blank">推荐</a> </span>
+  <div id="tab-hd01"> 
+  {dede:channel type='son'}
+      <span  class=""><a href="[field:typeurl/]">[field:typename/]</a> </span>
+      {/dede:channel}</div>
+</div>
+<div class="clearfix"></div>
+<div class="sanpin_item" id="tab-bd01"> 
+ {dede:channelartlist}
+  <ul class="clearfix" style="display:none">
+ {dede:arclist row=5 titlelen=32 noflag='h' flag='c'}
+    <li><span><a href="[field:arcurl/]"><img src="[field:litpic/]" width="218" height="145"/></a>
+      </span><span class="text"><a href="[field:arcurl/]">[field:title/]</a>
+      </span></li>
+{/dede:arclist}
+  </ul> 
+  {/dede:channelartlist}
+</div>
+<script type="text/javascript">
+$(function(){
+    function tabs(tabTit,on,tabCon){
+	$(tabCon).each(function(){
+	  $(this).children().eq(0).show();
+	  });
+	$(tabTit).each(function(){
+	  $(this).children().eq(0).addClass(on);
+	  });
+     $(tabTit).children().hover(function(){
+        $(this).addClass(on).siblings().removeClass(on);
+         var index = $(tabTit).children().index(this);
+         $(tabCon).children().eq(index).show().siblings().hide();
+    });
+     }
+  tabs("#tab-hd01"," select","#tab-bd01");
+   });
+</script> 
+<!---sanpin_item-->
+			</div><!---sanpin-->
+				
+				<div class="siping clearfix">
+					<div class="siping_left">
+						<div class="siping_left_item">
+							<h1 class="clearfix">
+								
+								<span><a href="#" target="_blank">最新</a></span>
+							</h1>
+							
+							<ul class="left">
+                                {dede:arclist limit='0,15' titlelen=46 noflag='h'}
+                            								<li><em>[field:pubdate function="MyDate('m-d',@me)"/]</em>
+                                <span><a href="[field:arcurl/]" target="_blank" title="[field:fulltitle/]">[field:title/]</a></span></li>	
+                                {/dede:arclist}			 			 
+                             							</ul>
+								
+							<ul class="right">
+								 {dede:arclist limit='15,15' titlelen=46 noflag='h'}
+                            							<li><em>[field:pubdate function="MyDate('m-d',@me)"/]</em>
+                                <span><a href="[field:arcurl/]" target="_blank" title="[field:fulltitle/]">[field:title/]</a></span></li>	
+                                {/dede:arclist}				 
+                             							</ul>
+						</div>
+					
+					</div>
+					
+					<div class="siping_right">
+						<div class="siping_right_item">
+								<h1><span>热门排行</span></h1>
+								<ul>
+                                      {dede:arclist row=11 orderby=click titlelen=36}
+									  <li><span><a href="[field:arcurl/]" target="_blank" title="[field:fulltitle/]">[field:title/]</a></span></li>
+                                       {/dede:arclist}
+                                     									
+                              </ul>
+						</div>
+					</div>
+				</div><!--siping-->				
+				
+		<!-- 友情链接 -->
+		<div class="links">
+			<div class="linkstitle"></div>
+			<ul class="ulfix">
+ {dede:flink/}
+			</ul>
+		</div>
+		<!-- @友情链接 -->			
+	</div><!--mybody_item--->
+</div><!---mybody-->
+{dede:include filename="footer.htm"/}
+</body>
+</html>

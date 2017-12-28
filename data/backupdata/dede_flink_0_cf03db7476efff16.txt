@@ -1,0 +1,4 @@
+INSERT INTO `dede_flink` VALUES('2','1','http://www.52jscn.com','站长圈','','','','1226375403','1','2');
+INSERT INTO `dede_flink` VALUES('9','1','http://www.zzrww.com/','站长交易网','','','','1227772717','1','2');
+INSERT INTO `dede_flink` VALUES('8','1','http://idc.52jscn.com','站长数据','','','','1227772703','1','2');
+INSERT INTO `dede_flink` VALUES('10','1','http://bbs.52jscn.com/','源码论坛','','admin@52jscn.com','','1423289534','1','2');

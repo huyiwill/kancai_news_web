@@ -1,0 +1,1 @@
+<li><div class="color[field:global.autoindex/]">[field:title/]</div></li>

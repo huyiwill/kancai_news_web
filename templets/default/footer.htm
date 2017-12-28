@@ -1,0 +1,23 @@
+<div class="footer">
+  <div class="wrapper">
+    <div class="lft">{dede:global.cfg_powerby/}  备案：{dede:global.cfg_beian/} </div>
+    <div class="rgt">
+    {dede:channel typeid='13' type='son'}
+      <a href='[field:typeurl/]'>[field:typename/]</a>
+	<span></span>
+    {/dede:channel}
+    <span style="display:none"><!-- 站长统计 --></span>
+    </div>
+  </div>
+</div>	
+
+<script>
+$(function(){
+	$(".nav li dl").each(function(){
+		if($(this).find("dd").size()==0){
+			$(this).remove();
+		}		
+	});
+	
+});
+</script>

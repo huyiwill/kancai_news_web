@@ -1,0 +1,133 @@
+<!DOCTYPE HTML>
+<!--[if lt IE 7 ]> <html lang="zh-CN" class="ie6 ielt8"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="zh-CN" class="ie7 ielt8"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="zh-CN" class="ie8"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html lang="zh-CN"><!--<![endif]-->
+<head>
+	<meta charset="gb2312">
+<title>搜索页_{dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:field name='keywords'/}" />
+<meta name="description" content="{dede:field name='description' function='html2text(@me)'/}" />
+	<!-- <link rel="stylesheet" type="text/css" href="/dede58/css/cmstop-common.css" />-->
+	<!-- <link rel="stylesheet" type="text/css" href="/dede58/css/cmstop-index.css" /> -->
+	<!--[if lt IE 9 ]>
+		<script type="text/javascript" src="/dede58/js/helper/modernizr.js"></script>
+	<![endif]-->
+	<script type="text/javascript" src="/dede58/js/cmstop-common.js"></script>
+	<script type="text/javascript" src="/dede58/js/jquery.js"></script>
+	<script type="text/javascript" src="/dede58/js/config.js"></script>
+	<script type="text/javascript" src="/dede58/js/jquery.cookie.js"></script>
+	<!-- <link href="http://img.ikanchai.com/apps/history/css/history.css" type="text/css" rel="stylesheet" /> -->
+	<!-- 本页面私有 -->
+    	<link rel="stylesheet" type="text/css" href="/dede58/html/css/style.css" />
+    	<script type="text/javascript" src="/dede58/html/js/common.js"></script>
+	<script type="text/javascript" src="/dede58/html/js/list.js"></script>
+	<!-- @本页面私有 -->
+</head>
+<body>
+	<!--网站公共头部-->
+	{dede:include filename="head.htm"/}
+	<!--@网站公共头部-->
+	<div class="main newslist">
+	<!--左侧-->
+	<div class="listl list2">
+		<div class="listview" style="width:auto">搜索： {dede:global name='keyword' function='RemoveXSS(@me)'/}</div>
+		<ul>
+    {dede:list pagesize='10'}
+
+			 				<li>
+			
+					<div class="viewimg"><div class="hotimgzz"></div><a href="[field:arcurl/]" class="zzsz">
+						</a><a href="[field:arcurl/]"  target="_blank" title="[field:fulltitle/]">
+							<img src="[field:litpic/]" alt="[field:fulltitle/]" width="250" height="165"/>
+						</a>
+						<div class="standpoint">[field:typelink/]</div>
+					</div>
+					<h3><a href="[field:arcurl/]"  target="_blank" title="[field:fulltitle/]">[field:title/]</a></h3>
+					<p>[field:description/]...</p>
+					<span>[field:pubdate function="MyDate('Y-m-d H:i',@me)"/]</span>
+				</li>
+                {/dede:list}
+							
+					</ul>
+		<div class="page">
+        {dede:pagelist listitem="pre,next,pageno" listsize="5"/}
+		</div>
+	</div>
+
+	<!--右侧-->
+	<div class="listr">
+		<!-- 广告位_01 -->
+		<div class="adimg">{dede:myad name='ad01'/}</div>
+		<!-- @广告位_01 -->
+		<!--排行榜-->
+		<div class="viewpoint hotlist">
+			<div class="hd">
+				<ul><li><a href="javascript:;" class="on">总排行</a></li><li><a href="javascript:;">月排行</a></li><li><a href="javascript:;">周排行</a></li></ul>
+			</div>
+			<div class="com-title"><span><img src="/dede58/html/images/symbol-18.png" alt="" />排行榜</span></div>
+			<div class="bd">
+						<ul>
+      {dede:arclist row=9 sort='hot' subday='3000'}
+      <li><a href="[field:arcurl/]">[field:title/]</a></li>
+      {/dede:arclist}     
+							</ul>
+						<ul>
+      {dede:arclist row=9 sort='hot' subday='30'}
+      <li><a href="[field:arcurl/]">[field:title/]</a></li>
+      {/dede:arclist} 
+							</ul>
+						<ul>
+      {dede:arclist row=9 sort='hot' subday='7'}
+      <li><a href="[field:arcurl/]">[field:title/]</a></li>
+      {/dede:arclist} 
+							</ul>
+						</div>
+		</div>
+		<div class="floatfix"></div>
+		<!-- 广告位_02-->
+		<div class="adimg2">
+			{dede:myad name='ad02'/}
+		</div>
+		<!-- @广告位_02 -->
+		<!--编辑推荐-->
+		<div class="recommend">
+			<div class="com-title" style="margin-bottom:10px;"><span><img src="/dede58/html/images/symbol-7.png" alt="编辑推荐" />编辑推荐</span></div>
+			<ul class="ulfix">
+                  {dede:arclist flag='c' titlelen=42 row=4}
+				<li><img src="[field:litpic/]" alt="[field:fulltitle/]" width="150" height="98" />
+	<p>
+		<a href="[field:arcurl/]"  target="_blank" title="[field:fulltitle/]">[field:title/]</a>
+	</p>
+</li>
+{/dede:arclist}
+			</ul>
+		</div>
+		<!-- 广告位_03-->
+		<div class="adimg">{dede:myad name='ad03'/}</div>
+		<!-- @广告位_03 -->
+		<div class="follow">
+			<div class="com-title"><span><img src="/dede58/html/images/symbol-5.png" alt="" />关注我们</span></div>
+			<div class="followcon followcon2">
+				<span>关注微信公众号，了解最新精彩内容</span>
+				<p class="">
+					<img src="/dede58/html/images/qr1.jpg" alt="" />
+<img src="/dede58/html/images/qr2.jpg" alt="" />
+				</p>
+			</div>
+		</div>
+	</div>	
+
+	<div class="mreturn">
+		<div id="code"></div>
+<div id="code_img" src="/dede58/html/images/qr2.jpg"></div>
+<a id="gotop"></a> 
+
+	</div>
+</div>
+
+	<!--网站公共页脚-->
+	{dede:include filename="footer.htm"/}
+<!--@网站公共页脚-->
+</body>
+</html>
